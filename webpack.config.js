@@ -1,4 +1,5 @@
 const path = require('path');
+const { RuntimeGlobals } = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -9,4 +10,16 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
     },
+    module: {
+        rules: [
+            {
+                test:/\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
+            }
+        ]
+    }
 }
