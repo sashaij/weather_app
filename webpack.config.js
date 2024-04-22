@@ -1,5 +1,6 @@
 const path = require('path');
 const { RuntimeGlobals } = require('webpack');
+const HtmlWebpackPllugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -21,5 +22,12 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPllugin ({
+            title: 'Weather App',
+            filename: 'index.html',
+            template: './src/template.html'
+        }),
+    ],
 }
