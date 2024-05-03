@@ -43,7 +43,8 @@ module.exports = {
         new HtmlWebpackPllugin ({
             title: 'Weather App',
             filename: 'index.html',
-            template: './src/template.html'
+            template: './src/template.html',
+            inject: false,
         }),
     ],
 }
