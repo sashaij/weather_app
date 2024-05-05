@@ -7,11 +7,74 @@
     <script defer src="./main.js"></script>
 </head>
 <body>
-    <form action="">
-        <fieldset>
-            <input type="text" placeholder="Your City" id="city-input">
-            <button type="submit" id="submit-button">Search</button>
-        </fieldset>
+    <div id="header">
+        <div id="logo"></div>
+        <div id="search-form">
+            <form action="">
+                <fieldset>
+                    <input type="text" placeholder="Your City" id="city-input">
+                    <button type="submit" id="submit-button">Search</button>
+                </fieldset>
+            </form> 
+        </div>
+    </div>
+    <div id="essential-info">
+        <div id="city-name">
+            Odesa
+        </div>
+        <div id="weather-condition">Cloudy</div>
+        <div id="current-temp">23</div>
+        <div id="high-low-temp">H: 24 L: 7</div>
+    </div>
+    <div id="forecast">
+        <div id="day-one">
+            <div class="fore-day" id="name-one">Monday</div>
+            <img src="" alt="" class="fore-icon" id="icon-one">
+            <div class="fore-temp" id="temp-one"></div>
+        </div>
+        <div id="day-two">
+            <div class="fore-day" id="name-two">Tuesday</div>
+            <img src="" alt="" class="fore-icon" id="icon-two">
+            <div class="fore-temp" id="temp-two"></div>
+        </div>
+        <div id="day-three">
+            <div class="fore-day" id="name-three">Wednesday</div>
+            <img src="" alt="" class="fore-icon" id="icon-three">
+            <div class="fore-temp" id="temp-three"></div>
+        </div>
+        <div id="day-four">
+            <div class="fore-day" id="name-four">Thursday</div>
+            <img src="" alt="" class="fore-icon" id="icon-four">
+            <div class="fore-temp" id="temp-four"></div>
+        </div>
+        <div id="day-five">
+            <div class="fore-day" id="name-five">Friday</div>
+            <img src="" alt="" class="fore-icon" id="icon-five">
+            <div class="fore-temp" id="temp-five"></div>
+        </div>
+        <div id="day-six">
+            <div class="fore-day" id="name-six">Saturday</div>
+            <img src="" alt="" class="fore-icon" id="icon-six">
+            <div class="fore-temp" id="temp-six"></div>
+        </div>
+        <div id="day-seven">
+            <div class="fore-day" id="name-seven">Sunday</div>
+            <img src="" alt="" class="fore-icon" id="icon-seven">
+            <div class="fore-temp" id="temp-seven"></div>
+        </div>
+    </div>
+    <div id="additional-info">
+        <div id="sunrise" class="add-info-el">07:04</div>
+        <div id="sunset" class="add-info-el">22:01</div>
+        <div id="ch-of-rain" class="add-info-el">0%</div>
+        <div id="humidity" class="add-info-el">70%</div>
+        <div id="wind" class="add-info-el">2 m/s</div>
+        <div id="feels-like" class="add-info-el">17</div>
+        <div id="precip" class="add-info-el">?</div>
+        <div id="pressure" class="add-info-el">1063</div>
+        <div id="visibility" class="add-info-el">100m</div>
+        <div id="uv-index" class="add-info-el">12</div>
+    </div>
         <!-- 
             mobile version up to down
 
@@ -40,6 +103,5 @@
 
 
          -->
-    </form>
 </body>
 </html>
