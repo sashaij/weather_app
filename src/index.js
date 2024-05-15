@@ -1,8 +1,14 @@
 import './styles/main.scss';
 import { getWeatherData } from './weatherData';
 import { getInputData, handleClick } from './ui';
+import weather from './assets/weather-news.png'
 
 
+const addImages = function () {
+    const logoImage = document.getElementById('logo-img');
+
+    logoImage.src = weather;
+}
 
 const submitButton = document.getElementById('submit-button');
 
@@ -19,3 +25,4 @@ function getWeather () {
 submitButton.addEventListener('click', handleClick)
 submitButton.addEventListener('click', getWeather)
 
+addImages();
