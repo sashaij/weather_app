@@ -1,0 +1,100 @@
+:root {
+    --main-background: #fffab7;
+    --main-elements: #5bbcff;
+    --secondary-one: #ffd1e3;
+    --secondary-two: #7ea1ff;
+}
+
+
+
+body {
+    background-color: rgb(116, 113, 96);
+    margin: 0;
+    min-width: 460px;
+}
+
+#city-name {
+    font-size: 3rem;
+}
+
+#city-input {
+    height: 40px;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+#city-input, #submit-button {
+    font-size: 22px;
+    border: none;
+    width: 100%;
+    //find out how to fill 
+    //all the width of the container
+    padding: 0 10px 0 10px;
+}
+
+#city-form-fset {
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    min-width: 410px;
+    border: none;
+}
+
+#weather-condition, #current-temp {
+    font-size: 2rem;
+}
+
+#high-low-temp {
+    font-size: 1.5rem;
+}
+
+#essential-info {
+    justify-content: space-between;
+}
+
+#header, #forecast, #essential-info, #additional-info {
+    width: 100%;
+}
+
+#forecast, #essential-info, #additional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#forecast {
+    background-color: var(--main-background);
+}
+
+#essential-info {
+    background-color: var(--main-elements);
+}
+
+#additional-info {
+    background-color: var(--secondary-one);
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 9rem;
+    margin-top: 15px;
+}
+
+#logo-img {
+    width: 50px;
+    height: auto;
+}
+
+/* #search-form {
+    width: 91vw;
+} */
+
+#submit-button {
+    border-radius: 4px;
+}
