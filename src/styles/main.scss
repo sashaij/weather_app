@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 :root {
     --main-background: #fffab7;
     --main-elements: #5bbcff;
@@ -8,6 +10,7 @@
 
 
 body {
+    font-family: "Quicksand", sans-serif;
     background-color: rgb(116, 113, 96);
     margin: 0;
     min-width: 460px;
@@ -15,6 +18,10 @@ body {
 
 #city-name {
     font-size: 3rem;
+}
+
+#city-name, #current-temp {
+    font-weight: 500;
 }
 
 #city-input {
@@ -48,7 +55,11 @@ body {
     padding: 0;
 }
 
-#weather-condition, #current-temp {
+#current-temp {
+    font-size: 4rem;
+}
+
+#weather-condition {
     font-size: 2rem;
 }
 
@@ -57,7 +68,10 @@ body {
 }
 
 #essential-info {
+    display: flex;
     justify-content: space-between;
+    height: 220px;
+    padding: 10px 0;
 }
 
 #header, #forecast, #essential-info, #additional-info {
