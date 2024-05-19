@@ -35,8 +35,7 @@ console.log(today.getDay());
 console.log(today);
 
 
-//gets current week day index
-const currentWeekDay = today.getDay();
+
 
 //takes week day index
 //returns week day name 
@@ -88,9 +87,10 @@ function arrangeDays () {
     //starting with current day
     let week = [];
     
-    //current week day index (0 - sunday);
-    let dayIndexCount = currentWeekDay;
-    
+    //gets current week day index
+    let currentWeekDay = today.getDay();
+
+
     //define week day name with
     //'getWeekDay' function
 
@@ -98,14 +98,14 @@ function arrangeDays () {
     //array starting with current
     //week day
     for (let i = 0; i <= 6; i++) {
-        if (dayIndexCount > 6) {
-            dayIndexCount = 0 
+        if (currentWeekDay > 6) {
+            currentWeekDay = 0 
         } 
-        let nextDay = getWeekDay(dayIndexCount);
+        let nextDay = getWeekDay(currentWeekDay);
         console.log('next day:');
         console.log(nextDay);
         week.push(nextDay);
-        dayIndexCount++;
+        currentWeekDay++;
     }
     console.log(week);
 
