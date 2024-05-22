@@ -1,8 +1,8 @@
 import './styles/main.scss';
-import { getWeatherData } from './weatherData';
-import { getInputData, handleClick } from './ui';
+import { getWeatherData } from './weatherData.js';
+import { getInputData, handleClick } from './data_ui.js';
 import weather from './assets/weather-news.png'
-import { getWeekDay, arrangeDays } from './time';
+import { getWeekDay, arrangeDays } from './time_ui.js';
 
 
 const addImages = function () {
@@ -29,7 +29,6 @@ submitButton.addEventListener('click', getWeather)
 addImages();
 
 getWeatherData('London');
-
 
 arrangeDays();
 
