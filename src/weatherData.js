@@ -1,4 +1,4 @@
-
+import { displayData } from "./data_ui.js";
 
 function getWeatherData (city) {
     //current data and forecast
@@ -11,10 +11,6 @@ function getWeatherData (city) {
 
         console.log(data);
 
-        const cityElem = document.getElementById('city-name');
-        const conditionElem = document.getElementById('weather-condition');
-        const currentTempElem = document.getElementById('current-temp');
-        const HiLoElem = document.getElementById('high-low-temp');
 
 
 
@@ -25,6 +21,8 @@ function getWeatherData (city) {
         essentialData.location = data.location.name;
         //condition
         essentialData.condition = data.current.condition.text;
+        //feels like
+        essentialData.feelsLike = data.current.feelslike_c;
         //current temperature
         essentialData.temperature = data.current.temp_c;
         //highest temp
@@ -36,7 +34,7 @@ function getWeatherData (city) {
         //sunrise
         essentialData.sunrise = data.forecast.forecastday[0].astro.sunrise;
         //sunset
-        essentialData.sunrise = data.forecast.forecastday[0].astro.sunset;
+        essentialData.sunset = data.forecast.forecastday[0].astro.sunset;
         //chance of rain
         essentialData.chanceOfRain = data.forecast.forecastday[0].day.daily_chance_of_rain;
         //chance of snow
@@ -46,11 +44,13 @@ function getWeatherData (city) {
         //wind direction
         essentialData.wind_direction = data.current.wind_dir;
         //percipitation
-        essentialData.visiblity = data.forecast.forecastday[0].day.totalprecip_mm;
+        essentialData.precipitation = data.forecast.forecastday[0].day.totalprecip_mm;
         //pressure
         essentialData.pressure = data.current.pressure_mb;
         //visibility
-        essentialData.visiblity = data.forecast.forecastday[0].day.avgvis_km;
+        essentialData.visibility = data.forecast.forecastday[0].day.avgvis_km;
+        //uv-index
+        essentialData.uvIndex = data.current.uv;
 
         //maximum temperatures forecast
         essentialData.maxtemps_c = [];
@@ -63,16 +63,12 @@ function getWeatherData (city) {
             essentialData.mintemps_c.push(data.forecast.forecastday[i].day.mintemp_c.toFixed(0));
         }
 
-        for (let i = 0; i <=6; i++) {
-            let tempElement = document.getElementById(`temp-${i}`);
-            tempElement.innerText = `${essentialData.mintemps_c[i]}° ${essentialData.maxtemps_c[i]}°`
-        }
+        displayData(essentialData);
     
         console.log('current data: ');
         console.log(essentialData);
     })
 }
-
 //essential data to be used
 /* function currentWeatherData (apiData) {
     let essentialData = {
