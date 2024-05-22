@@ -11,6 +11,13 @@ function getWeatherData (city) {
 
         console.log(data);
 
+        const cityElem = document.getElementById('city-name');
+        const conditionElem = document.getElementById('weather-condition');
+        const currentTempElem = document.getElementById('current-temp');
+        const HiLoElem = document.getElementById('high-low-temp');
+
+
+
         let essentialData = {
         
         }
@@ -44,7 +51,22 @@ function getWeatherData (city) {
         essentialData.pressure = data.current.pressure_mb;
         //visibility
         essentialData.visiblity = data.forecast.forecastday[0].day.avgvis_km;
-    
+
+        //maximum temperatures forecast
+        essentialData.maxtemps_c = [];
+        //minimum temps forecast
+        essentialData.mintemps_c = [];
+        
+        for (let i = 0; i <= 6; i++ ) {
+            essentialData.maxtemps_c.push(data.forecast.forecastday[i].day.maxtemp_c.toFixed(0));
+
+            essentialData.mintemps_c.push(data.forecast.forecastday[i].day.mintemp_c.toFixed(0));
+        }
+
+        for (let i = 0; i <=6; i++) {
+            let tempElement = document.getElementById(`temp-${i}`);
+            tempElement.innerText = `${essentialData.mintemps_c[i]}° ${essentialData.maxtemps_c[i]}°`
+        }
     
         console.log('current data: ');
         console.log(essentialData);
