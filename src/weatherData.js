@@ -56,11 +56,17 @@ function getWeatherData (city) {
         essentialData.maxtemps_c = [];
         //minimum temps forecast
         essentialData.mintemps_c = [];
+
+        //condition icons for week forecast
+        essentialData.conditionIcons = [];
+
         
         for (let i = 0; i <= 6; i++ ) {
             essentialData.maxtemps_c.push(data.forecast.forecastday[i].day.maxtemp_c.toFixed(0));
 
             essentialData.mintemps_c.push(data.forecast.forecastday[i].day.mintemp_c.toFixed(0));
+
+            essentialData.conditionIcons.push(`https:${data.forecast.forecastday[i].day.condition.icon}`) ;
         }
 
         displayData(essentialData);
