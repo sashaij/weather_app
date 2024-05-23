@@ -37,13 +37,13 @@ const getWeekDay = function (weekDayIndx) {
 
 function arrangeDays () {
 
-    const dayOne = document.getElementById('name-one');
+   /*  const dayOne = document.getElementById('name-one');
     const dayTwo = document.getElementById('name-two');
     const dayThree = document.getElementById('name-three');
     const dayFour = document.getElementById('name-four');
     const dayFive = document.getElementById('name-five');
     const daySix = document.getElementById('name-six');
-    const daySeven = document.getElementById('name-seven');
+    const daySeven = document.getElementById('name-seven'); */
 
     //week day names
     //starting with current day
@@ -61,6 +61,7 @@ function arrangeDays () {
     //array starting with current
     //week day
     for (let i = 0; i <= 6; i++) {
+
         if (currentWeekDay > 6) {
             currentWeekDay = 0 
         } 
@@ -72,17 +73,28 @@ function arrangeDays () {
     }
     console.log(week);
 
+    for (let i = 0; i<=6; i++) {
+        //selector for week day element in
+        //week temp forecast section
+        let weekDayNameElem = document.getElementById(`name-${i}`);
+
+        //assign name for each week day
+        weekDayNameElem.innerText = week[i];
+
+
+    }
+
     //assign week day names
     //for a week 
     //starting with a current 
     //week day
-    dayOne.innerText = week[0]; //current week day
+    /* dayOne.innerText = week[0]; //current week day
     dayTwo.innerText = week[1];
     dayThree.innerText = week[2];
     dayFour.innerText = week[3];
     dayFive.innerText = week[4];
     daySix.innerText = week[5];
-    daySeven.innerText = week[6];
+    daySeven.innerText = week[6]; */
 }
 
 export { getWeekDay, arrangeDays }
