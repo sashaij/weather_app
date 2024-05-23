@@ -39,25 +39,35 @@ function displayData (data) {
     const visibilityEl = document.getElementById('visibility');
     const uvIndexEl = document.getElementById('uv-index');
 
-
+    //additional data
     sunriseEl.innerText = data.sunrise;
     sunsetEl.innerText = data.sunset;
-    chanceRainEl.innerText = data.chanceOfRain;
-    humdidityEl.innerText = data.humidity;
-    windSpeedEl.innerText = data.wind_speed;
-    feelsLikeEl.innerText = data.feelsLike;
-    percipitationEl.innerText = data.precipitation;
-    pressureEl.innerText = data.pressure;
-    visibilityEl.innerText = data.visibility;
+    chanceRainEl.innerText = `${data.chanceOfRain}%`;
+    humdidityEl.innerText = `${data.humidity}%`;
+    windSpeedEl.innerText = `${data.wind_speed}km/h`;
+    feelsLikeEl.innerText = `${data.feelsLike}°`;
+    percipitationEl.innerText = `${data.precipitation}mm`;
+    pressureEl.innerText = `${data.pressure}mb`;
+    visibilityEl.innerText = `${data.visibility}km`;
     uvIndexEl.innerText = data.uvIndex;
+    cityElem.innerText = data.location;
+    conditionElem.innerText = data.condition;
+    currentTempElem.innerText = `${data.temperature}°C`;
+    HiLoElem.innerText = `H: ${data.highTemp.toFixed(0)} L: ${data.lowTemp.toFixed(0)}`
+    
 
 
-    //select every daily temp el
-    //and assign forecast temp value
+    
     for (let i = 0; i <=6; i++) {
+        //select every daily temp el
         let tempElement = document.getElementById(`temp-${i}`);
+        //condition icon element
+        let condIconElem = document.getElementById(`icon-${i}`);
+        condIconElem.src = data.conditionIcons[i];
         tempElement.innerText = `${data.mintemps_c[i]}° ${data.maxtemps_c[i]}°`
     }
+
+    //condition icons for week forecast
 }
 
 export { getInputData, handleClick, displayData }
