@@ -53,7 +53,7 @@ function displayData (data) {
     cityElem.innerText = data.location;
     conditionElem.innerText = data.condition;
     currentTempElem.innerText = `${data.temperature}°C`;
-    HiLoElem.innerText = `H: ${data.highTemp.toFixed(0)} L: ${data.lowTemp.toFixed(0)}`
+    HiLoElem.innerText = `H: ${data.highTemp.toFixed(0)}° L: ${data.lowTemp.toFixed(0)}°`
     
 
 
