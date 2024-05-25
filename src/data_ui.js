@@ -39,6 +39,9 @@ function displayData (data) {
     const visibilityEl = document.getElementById('visibility');
     const uvIndexEl = document.getElementById('uv-index');
 
+    //hourly forecast elements
+
+
     //additional data
     sunriseEl.innerText = data.sunrise;
     sunsetEl.innerText = data.sunset;
@@ -50,12 +53,14 @@ function displayData (data) {
     pressureEl.innerText = `${data.pressure}mb`;
     visibilityEl.innerText = `${data.visibility}km`;
     uvIndexEl.innerText = data.uvIndex;
+
+    //essentian data
     cityElem.innerText = data.location;
     conditionElem.innerText = data.condition;
     currentTempElem.innerText = `${data.temperature}°C`;
     HiLoElem.innerText = `H: ${data.highTemp.toFixed(0)}° L: ${data.lowTemp.toFixed(0)}°`
-    
 
+    //hourly forecast data
 
     
     for (let i = 0; i <=6; i++) {
@@ -63,11 +68,22 @@ function displayData (data) {
         let tempElement = document.getElementById(`temp-${i}`);
         //condition icon element
         let condIconElem = document.getElementById(`icon-${i}`);
+        //condition icons for week forecast
         condIconElem.src = data.conditionIcons[i];
         tempElement.innerText = `${data.mintemps_c[i]}° ${data.maxtemps_c[i]}°`
     }
 
-    //condition icons for week forecast
+    for (let i = 0; i <= 23; i++) {
+         let hourlyCondEl = document.getElementById(`hour-cond-icon-${i}`);
+         let hourEl = document.getElementById(`hour-val-${i}`);
+         let hourlyTempEl = document.getElementById(`hour-temp-${i}`);
+
+         hourlyCondEl.src = data.hourlyCondition[i];
+         hourEl.innerText = i;
+         hourlyTempEl.innerText = data.hourlyTemperature[i];
+    }
+
+
 }
 
 export { getInputData, handleClick, displayData }
