@@ -117,6 +117,24 @@ body {
     padding: 15px 0;
 }
 
+#forecast-hourly {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.fore-hour {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.fore-hour-value, .fore-cond-img, .fore-temp {
+    width: 60px;
+    height: auto;
+}
+
 #essential-info {
     background-color: var(--main-elements);
 }
