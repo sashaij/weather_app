@@ -60,6 +60,12 @@ function getWeatherData (city) {
         //condition icons for week forecast
         essentialData.conditionIcons = [];
 
+        //hourly condition 
+        essentialData.hourlyCondition = [];
+
+        //hourlyTemperature
+        essentialData.hourlyTemperature = [];
+
         
         for (let i = 0; i <= 6; i++ ) {
             essentialData.maxtemps_c.push(data.forecast.forecastday[i].day.maxtemp_c.toFixed(0));
@@ -68,6 +74,18 @@ function getWeatherData (city) {
 
             essentialData.conditionIcons.push(`https:${data.forecast.forecastday[i].day.condition.icon}`) ;
         }
+
+        for (let i = 0; i <= 23; i++) {
+            let hourlyCondition = `https:${data.forecast.forecastday[0].hour[i].condition.icon}`
+
+            let hourlyTemp = data.forecast.forecastday[0].hour[i].temp_c.toFixed(0)
+
+            essentialData.hourlyCondition.push(hourlyCondition);
+
+            essentialData.hourlyTemperature.push(hourlyTemp);
+        }
+
+
 
         displayData(essentialData);
     
