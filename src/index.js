@@ -3,6 +3,7 @@ import { getWeatherData } from './weatherData.js';
 import { getInputData, handleClick } from './data_ui.js';
 import weather from './assets/weather-news.png'
 import { getWeekDay, arrangeDays } from './time_ui.js';
+import { renderForecastHourly } from './general_ui.js';
 
 
 const addImages = function () {
@@ -23,12 +24,14 @@ function getWeather () {
 }
 
 //prevent form from submit
-submitButton.addEventListener('click', handleClick)
-submitButton.addEventListener('click', getWeather)
+submitButton.addEventListener('click', handleClick);
+submitButton.addEventListener('click', getWeather);
+
+renderForecastHourly();
 
 addImages();
 
-getWeatherData('London');
+getWeatherData('Sydney');
 
 arrangeDays();
 
